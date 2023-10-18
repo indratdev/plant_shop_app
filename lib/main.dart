@@ -15,12 +15,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         textTheme: TextTheme(
-          headlineLarge: TextStyle(fontSize: 34),
+          headlineMedium:
+              TextStyle(fontSize: MediaQuery.sizeOf(context).width / 20),
+          headlineLarge:
+              TextStyle(fontSize: MediaQuery.sizeOf(context).width / 12),
+        ).apply(
+          bodyColor: CustomColor.blackColor,
         ),
         scaffoldBackgroundColor: CustomColor.whiteV1Color,
       ),
       debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen(),
+      home: const OnBoardingScreen(),
     );
   }
 }
