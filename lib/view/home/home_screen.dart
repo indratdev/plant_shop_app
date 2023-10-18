@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:plant_shop_app/shared/utils/colors/custom_colors.dart';
 
-class PlantScreen extends StatefulWidget {
-  const PlantScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<PlantScreen> createState() => _PlantScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _PlantScreenState extends State<PlantScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    double sizeContainer = MediaQuery.sizeOf(context).height / 3;
+
     return Scaffold(
       backgroundColor: CustomColor.greyV2Color,
       appBar: AppBar(
@@ -32,7 +34,7 @@ class _PlantScreenState extends State<PlantScreen> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(24, 8, 24, 0),
+        padding: EdgeInsets.fromLTRB(12, 8, 12, 0),
         child: Column(
           children: [
             Container(
@@ -73,21 +75,91 @@ class _PlantScreenState extends State<PlantScreen> {
             ),
             // MasonryGridView
             Expanded(
-              child: MasonryGridView.count(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                crossAxisCount: 2,
-                mainAxisSpacing: 4,
-                crossAxisSpacing: 4,
-                itemCount: 10,
+              child: MasonryGridView.builder(
+                itemCount: 5,
+                gridDelegate:
+                    const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
                 itemBuilder: (context, index) {
-                  return Tile(
-                    index: index,
-                    extent: (index % 2 == 0) ? 300 : 200,
+                  return Padding(
+                    padding: EdgeInsets.all(8),
+                    child: (index == 0)
+                        ? Column(
+                            children: [
+                              SizedBox(
+                                height: MediaQuery.sizeOf(context).height / 8,
+                                child: Text(
+                                  "Found \n10 Result",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: Theme.of(context)
+                                        .textTheme
+                                        .headlineLarge
+                                        ?.fontSize,
+                                  ),
+                                ),
+                              ),
+                              ProductWidget(sizeContainer: sizeContainer),
+                            ],
+                          )
+                        : ProductWidget(sizeContainer: sizeContainer),
                   );
                 },
               ),
-            )
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ProductWidget extends StatelessWidget {
+  const ProductWidget({
+    super.key,
+    required this.sizeContainer,
+  });
+
+  final double sizeContainer;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: CustomColor.whiteV1Color,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      height: sizeContainer,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
+        child: Column(
+          children: [
+            Expanded(
+              child: Image.asset(
+                'assets/images/cambodia.webp',
+                fit: BoxFit.cover,
+              ),
+            ),
+            Text("data"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("RP. 5000"),
+                CircleAvatar(
+                  radius: 16,
+                  backgroundColor: Colors.black,
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      size: 16,
+                      Icons.favorite,
+                      color: CustomColor.whiteV1Color,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -134,10 +206,10 @@ class Tile extends StatelessWidget {
           height: 200,
         ),
         Container(
-          margin: EdgeInsets.only(bottom: 50),
+          // margin: EdgeInsets.only(bottom: 10),
           color: backgroundColor ?? Colors.amber,
           // height: extent,
-          height: 350,
+          // height: 350,
           child: Center(
             child: CircleAvatar(
               minRadius: 20,

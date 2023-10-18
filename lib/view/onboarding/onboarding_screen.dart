@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_shop_app/shared/utils/colors/custom_colors.dart';
 import 'package:plant_shop_app/view/onboarding/widgets/plant_indicator_widget.dart';
-import 'package:plant_shop_app/view/plants/plant_screen.dart';
+import 'package:plant_shop_app/view/home/home_screen.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -23,7 +23,7 @@ class OnBoardingScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const PlantScreen(),
+                              builder: (context) => const HomeScreen(),
                             ));
                       },
                       child: Text(
@@ -83,7 +83,7 @@ class OnBoardingScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const PlantScreen(),
+                          builder: (context) => const HomeScreen(),
                         ));
                   },
                   style: ButtonStyle(
