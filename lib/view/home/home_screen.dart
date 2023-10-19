@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: CustomColor.greyV2Color,
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: CustomColor.greyV2Color,
         centerTitle: true,
         title: const Text("Search Products"),
@@ -41,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(Icons.arrow_back_ios_new_rounded),
+          icon: GlobalVariables.backButtonIcon,
         ),
         actions: [
           Padding(
@@ -51,12 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
         child: Column(
           children: [
             SizedBox(
               height: MediaQuery.sizeOf(context).height / 13,
-              child: Row(
+              child: const Row(
                 children: [
                   SearchProductWidget(),
                   FilterProductWidget(),

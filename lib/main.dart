@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         textTheme: TextTheme(
-          bodySmall: TextStyle(fontSize: MediaQuery.sizeOf(context).width / 30),
+          bodySmall: TextStyle(fontSize: MediaQuery.sizeOf(context).width / 28),
           headlineMedium:
               TextStyle(fontSize: MediaQuery.sizeOf(context).width / 20),
           headlineLarge:

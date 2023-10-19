@@ -19,7 +19,7 @@ class SearchProductWidget extends StatelessWidget {
           decoration: const InputDecoration(
             border: InputBorder.none,
             prefixIcon: Icon(Icons.search),
-            hintText: "Plant",
+            hintText: "Plants",
           ),
         ),
       ),

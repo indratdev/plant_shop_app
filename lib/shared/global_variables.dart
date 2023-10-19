@@ -1,7 +1,9 @@
 // import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+
 class GlobalVariables {
-  static const int maxImageOnBoard = 4;
+  static const int maxImageOnBoard = 3;
 
   // images
   static const String plumeria = 'assets/images/plumeria.webp';
@@ -14,10 +16,10 @@ class GlobalVariables {
   static const String rose = 'assets/images/rose.webp';
   static const String sunflower = 'assets/images/sunflower.webp';
   static const String tulip = 'assets/images/tulip.webp';
-  static const String avatar = 'assets/icons/avatar.png';
+  static const String avatar = 'assets/icons/avatar.webp';
 
   //icons
-  // static const Icon deleteIcon = Icon(Icons.delete_forever);
+  static const Icon backButtonIcon = Icon(Icons.arrow_back_ios_new_rounded);
 
   static const Duration standartDurationAnimation = Duration(milliseconds: 700);
 }

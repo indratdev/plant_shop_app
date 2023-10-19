@@ -16,7 +16,7 @@ class PlantIndicatorWidget extends StatefulWidget {
 }
 
 class _PlantIndicatorWidgetState extends State<PlantIndicatorWidget> {
-  final controller = PageController(viewportFraction: 0.8, keepPage: true);
+  final controller = PageController(viewportFraction: 1.0, keepPage: true);
   PlantController plantController = PlantController();
   List<PlantModel> listPlantModel = [];
 
@@ -27,41 +27,44 @@ class _PlantIndicatorWidgetState extends State<PlantIndicatorWidget> {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final pages = List.generate(
       GlobalVariables.maxImageOnBoard,
       (index) => Container(
-        width: 1200,
         decoration: BoxDecoration(
-          // color: Colors.amber,
           borderRadius: BorderRadius.circular(16),
-          // color: Colors.grey.shade300,
           image: DecorationImage(
             alignment: Alignment.center,
             image: AssetImage(
               listPlantModel[index].image,
             ),
-            fit: BoxFit.scaleDown,
+            fit: BoxFit.contain,
           ),
         ),
-        margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
       ),
     );
 
     return Column(
       children: [
-        Container(
-          // color: Colors.red,
+        SizedBox(
           height: MediaQuery.sizeOf(context).height / 2,
+          width: MediaQuery.sizeOf(context).width - 50,
           child: PageView.builder(
             controller: controller,
-            // itemCount: pages.length,
+            scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) {
               return pages[index % pages.length];
             },
           ),
         ),
         SmoothPageIndicator(
+          
             controller: controller,
             count: pages.length,
             effect: const ExpandingDotsEffect(

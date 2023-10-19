@@ -19,7 +19,7 @@ class _ProductFavoriteWidgetState extends State<ProductFavoriteWidget> {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: 16,
+      radius: MediaQuery.sizeOf(context).width / 24,
       backgroundColor: Colors.black,
       child: IconButton(
         onPressed: () {
@@ -27,7 +27,7 @@ class _ProductFavoriteWidgetState extends State<ProductFavoriteWidget> {
           setState(() {});
         },
         icon: Icon(
-          size: 16,
+          size: MediaQuery.sizeOf(context).width / 24,
           Icons.favorite,
           color: (widget.product.isFavorite)
               ? CustomColor.redColor
