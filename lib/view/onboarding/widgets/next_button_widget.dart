@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../shared/utils/colors/custom_colors.dart';
 import '../../home/home_screen.dart';
@@ -29,11 +30,16 @@ class NextButtonWidget extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(
               CustomColor.greenColor), // <-- Button color
         ),
-        child: Icon(
-          Icons.arrow_forward,
+        child: FaIcon(
+          FontAwesomeIcons.arrowRightLong,
           color: CustomColor.whiteV1Color,
-          size: MediaQuery.sizeOf(context).height / 16,
+          size: MediaQuery.sizeOf(context).height / 20,
         ),
+        //     Icon(
+        //   Icons.arrow_forward,
+        //   color: CustomColor.whiteV1Color,
+        //   size: MediaQuery.sizeOf(context).height / 16,
+        // ),
       ),
     );
   }

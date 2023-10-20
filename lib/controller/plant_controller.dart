@@ -13,8 +13,17 @@ class PlantController {
       description: "Most species are deciduous shrubs or small trees",
       type: "Ornamental plants",
       amount: 10.0,
-      image: GlobalVariables.plumeria,
+      image: [GlobalVariables.plumeria],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 18,
+        ToleranceValue.max: 27,
+      },
+      height: {
+        ToleranceValue.min: 4,
+        ToleranceValue.max: 7,
+      },
+      pot: "Ceramic Pot",
     ),
     PlantModel(
       id: 2,
@@ -22,8 +31,17 @@ class PlantController {
       description: "That are commonly known as geraniums or cranesbills.",
       type: "Ornamental plants",
       amount: 9.0,
-      image: GlobalVariables.geranium,
+      image: [GlobalVariables.geranium],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 10,
+        ToleranceValue.max: 16,
+      },
+      height: {
+        ToleranceValue.min: 1,
+        ToleranceValue.max: 60,
+      },
+      pot: "Ceramic Pot",
     ),
     PlantModel(
       id: 3,
@@ -32,8 +50,17 @@ class PlantController {
           "A genus of flowering plants in the mallow family, Malvaceae",
       type: "Ornamental plants",
       amount: 12.99,
-      image: GlobalVariables.hibiscus,
+      image: [GlobalVariables.hibiscus],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 15,
+        ToleranceValue.max: 29,
+      },
+      height: {
+        ToleranceValue.min: 450,
+        ToleranceValue.max: 900,
+      },
+      pot: "Ceramic Pot",
     ),
     PlantModel(
       id: 4,
@@ -42,8 +69,17 @@ class PlantController {
           "A genus of shrubs and vines in the olive family of Oleaceae",
       type: "Ornamental plants",
       amount: 11.0,
-      image: GlobalVariables.jasmine,
+      image: [GlobalVariables.jasmine],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 18,
+        ToleranceValue.max: 27,
+      },
+      height: {
+        ToleranceValue.min: 4,
+        ToleranceValue.max: 7,
+      },
+      pot: "Ceramic Pot",
     ),
     PlantModel(
       id: 5,
@@ -52,8 +88,17 @@ class PlantController {
           "A genus of 47 known species of flowering plants in the mint family, Lamiaceae",
       type: "Ornamental plants",
       amount: 10.0,
-      image: GlobalVariables.lavender,
+      image: [GlobalVariables.lavender],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 18,
+        ToleranceValue.max: 27,
+      },
+      height: {
+        ToleranceValue.min: 4,
+        ToleranceValue.max: 7,
+      },
+      pot: "Ceramic Pot",
     ),
     PlantModel(
       id: 6,
@@ -62,8 +107,17 @@ class PlantController {
           "A genus of herbaceous flowering plants growing from bulbs, all with large prominent flowers",
       type: "Ornamental plants",
       amount: 9.5,
-      image: GlobalVariables.lily,
+      image: [GlobalVariables.lily],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 18,
+        ToleranceValue.max: 27,
+      },
+      height: {
+        ToleranceValue.min: 4,
+        ToleranceValue.max: 7,
+      },
+      pot: "Ceramic Pot",
     ),
     PlantModel(
       id: 7,
@@ -71,8 +125,17 @@ class PlantController {
       description: "Plants that belong to the family Orchidaceae",
       type: "Ornamental plants",
       amount: 13.0,
-      image: GlobalVariables.orcid,
+      image: [GlobalVariables.orcid],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 18,
+        ToleranceValue.max: 27,
+      },
+      height: {
+        ToleranceValue.min: 4,
+        ToleranceValue.max: 7,
+      },
+      pot: "Ceramic Pot",
     ),
     PlantModel(
       id: 8,
@@ -80,8 +143,17 @@ class PlantController {
       description: "Either a woody perennial flowering plant of the genus Rosa",
       type: "Ornamental plants",
       amount: 0.0,
-      image: GlobalVariables.rose,
+      image: [GlobalVariables.rose],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 18,
+        ToleranceValue.max: 27,
+      },
+      height: {
+        ToleranceValue.min: 4,
+        ToleranceValue.max: 7,
+      },
+      pot: "Ceramic Pot",
     ),
     PlantModel(
       id: 9,
@@ -90,8 +162,17 @@ class PlantController {
           "A genus comprising about 70 species of annual and perennial flowering plants in the daisy family Asteraceae commonly known as sunflowers",
       type: "Ornamental plants",
       amount: 12.99,
-      image: GlobalVariables.sunflower,
+      image: [GlobalVariables.sunflower],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 18,
+        ToleranceValue.max: 27,
+      },
+      height: {
+        ToleranceValue.min: 4,
+        ToleranceValue.max: 7,
+      },
+      pot: "Ceramic Pot",
     ),
     PlantModel(
       id: 10,
@@ -100,8 +181,17 @@ class PlantController {
           "A genus of spring-blooming perennial herbaceous bulbiferous geophytes (having bulbs as storage organs)",
       type: "Ornamental plants",
       amount: 12.50,
-      image: GlobalVariables.tulip,
+      image: [GlobalVariables.tulip],
       isFavorite: false,
+      temperature: {
+        ToleranceValue.min: 18,
+        ToleranceValue.max: 27,
+      },
+      height: {
+        ToleranceValue.min: 4,
+        ToleranceValue.max: 7,
+      },
+      pot: "Ceramic Pot",
     ),
   ];
 

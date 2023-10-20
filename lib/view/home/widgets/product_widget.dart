@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_shop_app/shared/global_variables.dart';
 import 'package:plant_shop_app/shared/utils/currency/currency.dart';
 import 'package:plant_shop_app/view/home/widgets/export.dart';
 
@@ -29,7 +30,7 @@ class ProductWidget extends StatelessWidget {
           children: [
             Expanded(
               child: Image.asset(
-                product.image,
+                product.image?.first ?? GlobalVariables.noImage,
                 fit: BoxFit.cover,
               ),
             ),
@@ -58,7 +59,7 @@ class ProductWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  CustomCurrency().formatCurrencyToUS(product.amount),
+                  CustomCurrency.formatCurrencyToUS(product.amount),
                   style: const TextStyle(
                     fontWeight: FontWeight.w800,
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_shop_app/shared/global_variables.dart';
 
 import '../../../shared/utils/colors/custom_colors.dart';
 

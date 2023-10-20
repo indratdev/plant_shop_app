@@ -42,7 +42,7 @@ class _PlantIndicatorWidgetState extends State<PlantIndicatorWidget> {
           image: DecorationImage(
             alignment: Alignment.center,
             image: AssetImage(
-              listPlantModel[index].image,
+              listPlantModel[index].image?.first ?? GlobalVariables.noImage,
             ),
             fit: BoxFit.contain,
           ),
@@ -64,7 +64,6 @@ class _PlantIndicatorWidgetState extends State<PlantIndicatorWidget> {
           ),
         ),
         SmoothPageIndicator(
-          
             controller: controller,
             count: pages.length,
             effect: const ExpandingDotsEffect(

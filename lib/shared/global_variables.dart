@@ -1,6 +1,5 @@
-// import 'package:flutter/material.dart';
-
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GlobalVariables {
   static const int maxImageOnBoard = 3;
@@ -17,10 +16,16 @@ class GlobalVariables {
   static const String sunflower = 'assets/images/sunflower.webp';
   static const String tulip = 'assets/images/tulip.webp';
   static const String avatar = 'assets/icons/avatar.webp';
+  static const String noImage = 'assets/images/noimage.webp';
 
   //icons
-  static const Icon backButtonIcon = Icon(Icons.arrow_back_ios_new_rounded);
-
+  static const FaIcon searchIcon = FaIcon(FontAwesomeIcons.magnifyingGlass);
+  static const FaIcon arrowRightLongIcon =
+      FaIcon(FontAwesomeIcons.arrowRightLong);
+  static const FaIcon backButtonIcon = FaIcon(FontAwesomeIcons.chevronLeft);
+  static const IconData sortIcon = FontAwesomeIcons.arrowUpShortWide;
+  static const FaIcon sliderIcon = FaIcon(FontAwesomeIcons.sliders);
+  static const IconData temperatureIcon = FontAwesomeIcons.temperatureLow;
   static const Duration standartDurationAnimation = Duration(milliseconds: 700);
 }
 

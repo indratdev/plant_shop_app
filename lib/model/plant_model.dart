@@ -1,9 +1,17 @@
+enum ToleranceValue {
+  min,
+  max,
+}
+
 class PlantModel {
   int id;
   String name, description, type;
   double amount;
   bool isFavorite;
-  String image;
+  Map<ToleranceValue, dynamic>? height;
+  Map<ToleranceValue, dynamic>? temperature;
+  String pot;
+  List<String>? image;
 
   PlantModel({
     required this.id,
@@ -12,6 +20,9 @@ class PlantModel {
     this.type = "",
     this.amount = 0.0,
     this.isFavorite = false,
-    this.image = "",
+    this.height,
+    this.temperature,
+    this.pot = "",
+    this.image,
   });
 }

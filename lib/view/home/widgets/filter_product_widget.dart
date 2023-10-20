@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_shop_app/shared/global_variables.dart';
 
 import '../../../shared/utils/colors/custom_colors.dart';
 
@@ -17,10 +18,8 @@ class FilterProductWidget extends StatelessWidget {
       ),
       child: IconButton(
         onPressed: () {},
-        icon: const Icon(
-          Icons.tune,
-          color: Colors.black,
-        ),
+        icon: GlobalVariables.sliderIcon,
+        iconSize: MediaQuery.sizeOf(context).width / 20,
       ),
     );
   }
