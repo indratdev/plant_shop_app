@@ -7,6 +7,8 @@ class GlobalVariables {
   // images
   static const String plumeria = 'assets/images/plumeria.webp';
   static const String geranium = 'assets/images/geranium.webp';
+  static const String geranium2 = 'assets/images/geranium_2.webp';
+  static const String geranium3 = 'assets/images/geranium_3.webp';
   static const String hibiscus = 'assets/images/hibiscus.webp';
   static const String jasmine = 'assets/images/jasmine.webp';
   static const String lavender = 'assets/images/lavender.webp';

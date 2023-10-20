@@ -31,7 +31,11 @@ class PlantController {
       description: "That are commonly known as geraniums or cranesbills.",
       type: "Ornamental plants",
       amount: 9.0,
-      image: [GlobalVariables.geranium],
+      image: [
+        GlobalVariables.geranium,
+        GlobalVariables.geranium2,
+        GlobalVariables.geranium3
+      ],
       isFavorite: false,
       temperature: {
         ToleranceValue.min: 10,
@@ -201,17 +205,12 @@ class PlantController {
     int maxImage = GlobalVariables.maxImageOnBoard;
     final random = Random();
     final List<PlantModel> randomPlants = [];
-
-    // Make sure that you have at least 4 items in _listPlant
     if (_listPlant.length >= maxImage) {
       final Set<int> selectedIndices = {};
-      // Loop until you have 4 unique random indices
       while (selectedIndices.length < maxImage) {
         final randomIndex = random.nextInt(_listPlant.length);
-        // Add the index to the Set if it's not already in it
         selectedIndices.add(randomIndex);
       }
-      // Extract the PlantModels using the selected indices
       for (final index in selectedIndices) {
         randomPlants.add(_listPlant[index]);
       }

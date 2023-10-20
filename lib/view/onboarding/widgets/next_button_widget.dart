@@ -14,32 +14,25 @@ class NextButtonWidget extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.sizeOf(context).height / 9,
       width: MediaQuery.sizeOf(context).height / 9,
-      // width: 100,
-      child: ElevatedButton(
-        onPressed: () {
+      child: GestureDetector(
+        onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => const HomeScreen(),
+            PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) {
+                return HomeScreen();
+              },
             ),
           );
         },
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all(const CircleBorder()),
-          padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
-          backgroundColor: MaterialStateProperty.all(
-              CustomColor.greenColor), // <-- Button color
+        child: CircleAvatar(
+          backgroundColor: CustomColor.greenColor,
+          child: FaIcon(
+            FontAwesomeIcons.arrowRightLong,
+            color: CustomColor.whiteV1Color,
+            size: MediaQuery.sizeOf(context).height / 20,
+          ),
         ),
-        child: FaIcon(
-          FontAwesomeIcons.arrowRightLong,
-          color: CustomColor.whiteV1Color,
-          size: MediaQuery.sizeOf(context).height / 20,
-        ),
-        //     Icon(
-        //   Icons.arrow_forward,
-        //   color: CustomColor.whiteV1Color,
-        //   size: MediaQuery.sizeOf(context).height / 16,
-        // ),
       ),
     );
   }

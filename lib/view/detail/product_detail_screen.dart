@@ -6,9 +6,9 @@ import '../../shared/global_variables.dart';
 import '../../shared/utils/colors/custom_colors.dart';
 
 class ProductDetailScreen extends StatefulWidget {
-  PlantModel product;
+  final PlantModel product;
 
-  ProductDetailScreen({
+  const ProductDetailScreen({
     super.key,
     required this.product,
   });

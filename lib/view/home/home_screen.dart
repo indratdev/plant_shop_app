@@ -51,24 +51,50 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height / 13,
-              child: const Row(
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return TweenAnimationBuilder(
+            tween: Tween(begin: 0.0, end: 1.0),
+            duration: const Duration(milliseconds: 2000),
+            builder: (context, value, child) {
+              return ShaderMask(
+                shaderCallback: (rect) {
+                  return RadialGradient(
+                          radius: value * 5,
+                          colors: const [
+                            Colors.white,
+                            Colors.white,
+                            Colors.transparent,
+                            Colors.transparent,
+                          ],
+                          stops: const [0.0, 0.55, 0.6, 1.0],
+                          center: const FractionalOffset(0.95, 0.90))
+                      .createShader(rect);
+                },
+                child: child,
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+              child: Column(
                 children: [
-                  SearchProductWidget(),
-                  FilterProductWidget(),
+                  SizedBox(
+                    height: MediaQuery.sizeOf(context).height / 13,
+                    child: const Row(
+                      children: [
+                        SearchProductWidget(),
+                        FilterProductWidget(),
+                      ],
+                    ),
+                  ),
+                  // MasonryGridView
+                  ListProductWidget(
+                      listProduct: listProduct, sizeContainer: sizeContainer),
                 ],
               ),
             ),
-            // MasonryGridView
-            ListProductWidget(
-                listProduct: listProduct, sizeContainer: sizeContainer),
-          ],
-        ),
+          );
+        },
       ),
     );
   }

@@ -34,13 +34,16 @@ class _PlantIndicatorWidgetState extends State<PlantIndicatorWidget> {
 
   @override
   Widget build(BuildContext context) {
+    double pageOffset = 0;
+
     final pages = List.generate(
       GlobalVariables.maxImageOnBoard,
       (index) => Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(
-            alignment: Alignment.center,
+            // alignment: Alignment.center,
+            alignment: Alignment(pageOffset, 0),
             image: AssetImage(
               listPlantModel[index].image?.first ?? GlobalVariables.noImage,
             ),
@@ -59,25 +62,29 @@ class _PlantIndicatorWidgetState extends State<PlantIndicatorWidget> {
             controller: controller,
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) {
-              return pages[index % pages.length];
+              return AnimatedBuilder(
+                animation: controller,
+                builder: (context, child) {
+                  // double pageOffset = 0;
+                  if (controller.position.haveDimensions) {
+                    pageOffset = controller.page! - index;
+                  }
+                  return pages[index % pages.length];
+                },
+              );
             },
           ),
         ),
         SmoothPageIndicator(
-            controller: controller,
-            count: pages.length,
-            effect: const ExpandingDotsEffect(
-              dotColor: CustomColor.greyColor,
-              activeDotColor: CustomColor.greenColor,
-              dotHeight: 7,
-              dotWidth: 7,
-            )
-            // const WormEffect(
-            //   dotHeight: 16,
-            //   dotWidth: 16,
-            //   type: WormType.thinUnderground,
-            // ),
-            ),
+          controller: controller,
+          count: pages.length,
+          effect: const ExpandingDotsEffect(
+            dotColor: CustomColor.greyColor,
+            activeDotColor: CustomColor.greenColor,
+            dotHeight: 7,
+            dotWidth: 7,
+          ),
+        ),
       ],
     );
   }

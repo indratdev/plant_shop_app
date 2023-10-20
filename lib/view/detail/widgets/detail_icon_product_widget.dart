@@ -4,11 +4,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../shared/utils/colors/custom_colors.dart';
 
 class DetailIconProductWidget extends StatelessWidget {
-  IconData icon;
-  String title;
-  String deskription;
+  final IconData icon;
+  final String title;
+  final String deskription;
 
-  DetailIconProductWidget({
+  const DetailIconProductWidget({
     super.key,
     required this.icon,
     required this.title,
